@@ -36,7 +36,7 @@ const TopFold = () => {
           </Link>
         </div>
       ) : (
-        <div className='flex justify-between items-center mt-8 w-1/2 mx-auto'>
+        <div className='flex justify-between items-center mt-8'>
           <Link to='/'>
             <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
               <IoIosArrowBack />

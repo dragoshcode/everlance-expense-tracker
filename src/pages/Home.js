@@ -1,15 +1,14 @@
-import React from 'react'
-import TopFold from '../components/TopFold'
+import React from 'react';
+import TopFold from '../components/TopFold';
+import ExpenseList from '../components/ExpenseList';
 
 const Home = () => {
-
-
   return (
     <div className='w-1/2 mx-auto'>
-      <TopFold/>
-        <div>ExpenseList</div>
+      <TopFold />
+      <ExpenseList />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

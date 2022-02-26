@@ -1,10 +1,12 @@
 import React from 'react';
+import AddForm from '../components/AddForm';
 import TopFold from '../components/TopFold';
 
 const AddExpense = () => {
   return (
-    <div>
+    <div className='w-1/2 mx-auto'>
       <TopFold />
+      <AddForm/>
     </div>
   );
 };
