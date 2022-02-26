@@ -1,5 +1,5 @@
 import { Menu, Transition } from '@headlessui/react';
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { MdOutlineSchool } from 'react-icons/md';
 import { RiMentalHealthLine } from 'react-icons/ri';
@@ -7,11 +7,10 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { TiFeather } from 'react-icons/ti';
 import { RiFunctionLine } from 'react-icons/ri';
 
-export default function Example() {
-  const [title, setTitle] = useState('Category');
+export default function Dropdown({category,setCategory}) {
 
   const handleTitle = (e) => {
-    setTitle(e.target.value);
+    setCategory(e.target.value);
   };
 
   return (
@@ -20,7 +19,7 @@ export default function Example() {
         <div>
           <Menu.Button className='inline-flex items-center justify-center w-full px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 mt-2 group-hover:bg-gray-100 transition-colors'>
             <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-bold group-hover:bg-gradient-to-bl group-hover:from-sky-300 group-hover:to-sky-500 transition-colors'>
-              {title}
+              {category}
             </p>
             <ChevronDownIcon
               className='w-5 h-5 mt-1 ml-2 -mr-1 text-gray-500 group-hover:text-gray-400 transition-colors'

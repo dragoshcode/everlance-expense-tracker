@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { GrFormAdd } from 'react-icons/gr';
+import { useDispatch } from 'react-redux';
+import { addExpense } from '../redux/actions/expenses';
 import Dropdown from './Dropdown';
 
 const AddForm = () => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState('Category');
+  const dispatch = useDispatch();
 
   const handleTitle = (e) => {
     setTitle(e.target.value);
@@ -20,6 +23,20 @@ const AddForm = () => {
     }
 
     setAmount(val);
+  };
+
+  const handleSubmit = () => {
+    if (!title || !amount || category === 'Category') {
+      return;
+    }
+
+    const data = {
+      title,
+      amount,
+      category,
+      createdAt: new Date(),
+    };
+    dispatch(addExpense(data));
   };
 
   return (
@@ -49,10 +66,10 @@ const AddForm = () => {
         />
       </div>
       <div className='mt-6'>
-        <Dropdown />
+        <Dropdown category={category} setCategory={setCategory} />
       </div>
-      <div className='group w-max'>
-        <div className='flex items-center mt-8 bg-gray-200 w-max py-1 px-3 rounded-lg gap-2 cursor-pointer group-hover:opacity-60 transition-opacity'>
+      <div className='group w-max cursor-pointer ' onClick={handleSubmit}>
+        <div className='flex items-center mt-8 bg-gray-200 w-max py-1 px-3 rounded-lg gap-2 group-hover:opacity-60 transition-opacity pointer-events-none'>
           <GrFormAdd className='group-hover:opacity-60 transition-opacity' />
           <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold group-hover:bg-gradient-to-bl group-hover:from-sky-300 group-hover:to-sky-500 transition-colors'>
             Add
