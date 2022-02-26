@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { BiSearchAlt } from 'react-icons/bi';
 import { MdOutlineAddCircleOutline } from 'react-icons/md';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiOutlineStop } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const TopFold = () => {
   const [query, setQuery] = useState('');
@@ -26,27 +26,33 @@ const TopFold = () => {
               onChange={(e) => handleQuery(e)}
             />
           </div>
-          <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
-            <MdOutlineAddCircleOutline className='text-lg' />
-            <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
-              Add
-            </p>
-          </div>
+          <Link to='/add-expense'>
+            <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
+              <MdOutlineAddCircleOutline className='text-lg' />
+              <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
+                Add
+              </p>
+            </div>
+          </Link>
         </div>
       ) : (
-        <div className='flex justify-between items-center mt-8'>
-          <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
-            <IoIosArrowBack />
-            <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
-              Back
-            </p>
-          </div>
-          <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
-            <AiOutlineStop />
-            <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
-              Cancel
-            </p>
-          </div>
+        <div className='flex justify-between items-center mt-8 w-1/2 mx-auto'>
+          <Link to='/'>
+            <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
+              <IoIosArrowBack />
+              <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
+                Back
+              </p>
+            </div>
+          </Link>
+          <Link to='/'>
+            <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
+              <AiOutlineStop />
+              <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
+                Cancel
+              </p>
+            </div>
+          </Link>
         </div>
       )}
     </>

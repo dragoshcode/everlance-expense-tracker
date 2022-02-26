@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import TopFold from '../components/TopFold';
 
 const AddExpense = () => {
   return (
-    <div>AddExpense</div>
-  )
-}
+    <div>
+      <TopFold />
+    </div>
+  );
+};
 
-export default AddExpense
+export default AddExpense;
