@@ -4,12 +4,16 @@ import { MdOutlineAddCircleOutline } from 'react-icons/md';
 import { IoIosArrowBack } from 'react-icons/io';
 import { AiOutlineStop } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { searchExpense } from '../redux/actions/expenses';
 
 const TopFold = () => {
   const [query, setQuery] = useState('');
+  const dispatch = useDispatch();
 
   const handleQuery = (e) => {
     setQuery(e.target.value);
+    dispatch(searchExpense(e.target.value));
   };
 
   return (

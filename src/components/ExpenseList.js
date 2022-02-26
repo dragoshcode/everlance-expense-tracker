@@ -5,7 +5,8 @@ import empty from '../assets/empty.svg';
 import { toast, ToastContainer } from 'react-toastify';
 
 const ExpenseList = () => {
-  const { expenseList: list } = useSelector((state) => state.expenses);
+  const { expenseList: list, query } = useSelector((state) => state.expenses);
+  const filterList = list.filter((item) => item.title.includes(query));
   const notifySuccess = () => toast.success('Expense Deleted');
 
   return (
@@ -16,8 +17,10 @@ const ExpenseList = () => {
         hideProgressBar={false}
         closeOnClick
       />
-      {list.length ? (
-        list.map((item) => <Card item={item} notifySuccess={notifySuccess} />)
+      {filterList.length ? (
+        filterList.map((item) => (
+          <Card item={item} notifySuccess={notifySuccess} />
+        ))
       ) : (
         <div className='mt-10'>
           <img

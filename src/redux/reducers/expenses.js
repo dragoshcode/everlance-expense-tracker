@@ -1,4 +1,8 @@
-import { ADD_EXPENSE, DELETE_EXPENSE } from '../action-types/expenses';
+import {
+  ADD_EXPENSE,
+  DELETE_EXPENSE,
+  SEARCH_EXPENSE,
+} from '../action-types/expenses';
 
 const initalList = () => {
   const list = localStorage.getItem('expense-list');
@@ -13,6 +17,7 @@ const initalList = () => {
 
 const initialState = {
   expenseList: initalList(),
+  query: '',
 };
 
 export const expenseReducer = (state = initialState, action) => {
@@ -33,11 +38,18 @@ export const expenseReducer = (state = initialState, action) => {
       const updatedList = state.expenseList.filter(
         (item) => item.createdAt !== data.createdAt
       );
-      
+
       localStorage.setItem('expense-list', JSON.stringify(updatedList));
       return {
         ...state,
         expenseList: updatedList,
+      };
+    }
+    case SEARCH_EXPENSE: {
+      const { query } = action;
+      return {
+        ...state,
+        query,
       };
     }
 
