@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { GrFormAdd } from 'react-icons/gr';
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { addExpense } from '../redux/actions/expenses';
 import Dropdown from './Dropdown';
 
@@ -27,6 +29,8 @@ const AddForm = () => {
 
   const handleSubmit = () => {
     if (!title || !amount || category === 'Category') {
+      const notify = () => toast('Please fill all the data');
+      notify();
       return;
     }
 
@@ -41,6 +45,12 @@ const AddForm = () => {
 
   return (
     <div className='bg-white rounded-lg p-6 mt-5'>
+      <ToastContainer
+        position='bottom-right'
+        autoClose={1900}
+        hideProgressBar={false}
+        closeOnClick
+      />
       <div className=''>
         <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
           Title:
