@@ -2,14 +2,22 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
 import empty from '../assets/empty.svg';
+import { toast, ToastContainer } from 'react-toastify';
 
 const ExpenseList = () => {
   const { expenseList: list } = useSelector((state) => state.expenses);
+  const notifySuccess = () => toast.success('Expense Deleted');
 
   return (
     <div className='mt-8'>
+      <ToastContainer
+        position='bottom-right'
+        autoClose={1400}
+        hideProgressBar={false}
+        closeOnClick
+      />
       {list.length ? (
-        list.map((item) => <Card item={item} />)
+        list.map((item) => <Card item={item} notifySuccess={notifySuccess} />)
       ) : (
         <div className='mt-10'>
           <img

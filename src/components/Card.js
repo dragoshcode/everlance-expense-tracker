@@ -5,12 +5,13 @@ import { BsTrash2 } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { deleteExpense } from '../redux/actions/expenses';
 
-const Card = ({ item }) => {
+const Card = ({ item, notifySuccess }) => {
   const time = moment(item.createdAt).fromNow();
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     dispatch(deleteExpense(item));
+    notifySuccess();
   };
 
   switch (item.category) {
