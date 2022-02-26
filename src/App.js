@@ -5,7 +5,7 @@ import Home from './pages/Home';
 
 const App = () => {
   return (
-    <div className='bg-gradient-to-bl from-sky-500 to-sky-900 h-screen'>
+    <div className='bg-gradient-to-bl from-sky-500 to-sky-900 min-h-screen'>
       <Header />
       <Home />
       <Footer />
