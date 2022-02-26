@@ -15,7 +15,7 @@ const TopFold = () => {
   return (
     <>
       {window.location.pathname === '/' ? (
-        <div className='flex flex-col gap-8 items-center md:justify-between md:gap-0 md:flex-row mt-8'>
+        <div className='flex flex-col gap-5 items-center md:justify-between md:gap-0 md:flex-row mt-8'>
           <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md'>
             <BiSearchAlt className='text-lg' />
             <input

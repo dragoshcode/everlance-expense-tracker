@@ -5,11 +5,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { addExpense } from '../redux/actions/expenses';
 import Dropdown from './Dropdown';
+import SuccessModal from './SuccessModal';
 
 const AddForm = () => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState('');
   const [category, setCategory] = useState('Category');
+  const [modalOpen, setModalOpen] = useState(false);
+
   const dispatch = useDispatch();
 
   const handleTitle = (e) => {
@@ -29,7 +32,7 @@ const AddForm = () => {
 
   const handleSubmit = () => {
     if (!title || !amount || category === 'Category') {
-      const notify = () => toast('Please fill all the data');
+      const notify = () => toast('Please fill all the data!');
       notify();
       return;
     }
@@ -41,6 +44,7 @@ const AddForm = () => {
       createdAt: new Date(),
     };
     dispatch(addExpense(data));
+    setModalOpen(true)
   };
 
   return (
@@ -51,6 +55,7 @@ const AddForm = () => {
         hideProgressBar={false}
         closeOnClick
       />
+      <SuccessModal modalOpen={modalOpen} setModalOpen={setModalOpen}/>
       <div className=''>
         <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
           Title:
