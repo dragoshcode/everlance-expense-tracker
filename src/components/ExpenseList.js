@@ -7,7 +7,7 @@ const ExpenseList = () => {
   const { expenseList: list } = useSelector((state) => state.expenses);
 
   return (
-    <div className='mt-6'>
+    <div className='mt-8'>
       {list.length ? (
         list.map((item) => <Card item={item} />)
       ) : (
