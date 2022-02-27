@@ -35,6 +35,7 @@ Demo gif
 
 - React
 - Redux
+- React Router
 - Tailwind
 - Local Storage
 - Others: MomentJS, HeadlessUI, ToastifyJS
