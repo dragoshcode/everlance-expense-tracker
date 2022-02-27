@@ -1,6 +1,6 @@
 <h1 id="top" align="center">
 
-![preview](/src/assets/logo.png)</h1>
+![preview](./src/assets/readme.png)</h1>
 
 <p align="center">Track your funds</p>
 
@@ -9,42 +9,40 @@ Don't worry, we got you, Everlance is your daily expense tracker
 
 ## 🎯Links
 
-Watch it in action [here](https://quublyy-search-app.netlify.app)
+Watch it in action [here](https://everlance-expense-tracker.netlify.app)
 
 ## 📌 Features
 
-- Get instant results on any query you type
-- View 4 type of content -> search Query, real-time News, Images, and Videos from most popular media websites
-- Click on the link and get redirected on the resource's page
-- Click on the video and it gets played with audio
-- Change the light mode
-- Use the app easily on any device -> it's fully responsive
+- Click Add button to add an expense you've made
+- Click Back or Cancel to exit from the Add Expense page
+- Put in the description, amount (USD) and choose the category of the expense
+- Click Add to submit the form, you'll get a success message if the expense was added & a notifier at the bottom if you've missed a field
+- View the time which passed since you've added the expense
+- Delete the expense 
+- See the reminder at the top right to remember the category of the expenses based on the color
+- Type in the search input to find the expense you need
+- See a notification if you don't have any expenses in your list
+- Keeps your expenses saved if you leave the page
+
 
 ## 🤳 Snapshots
 
 Demo gif
 
-![demo-gif](/public/Animation.gif)
+![demo-gif](./src/assets/Animation.gif)
 
 ## ✨ Built With
 
 - React
-- React Context
+- Redux
 - Tailwind
-- Google Search API (from RapidAPI)
+- Local Storage
+- Others: MomentJS, HeadlessUI, ToastifyJS
 
 ## 🤖 Known Bugs / To-do
 
-- **Do Testing**
-- Add images also to the query page (main page)
-- Add button to reset the searched query
-
-
-## 💻 Run locally
-
-- Clone this repo
-- Run `npm install` and `npm start`
-- The application opens in `http://localhost:3000/` or any other available port
+- Footer goes up on the screen when typing in input on mobile
+- Add dark mode
 
 <br/>
 
