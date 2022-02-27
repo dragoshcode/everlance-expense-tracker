@@ -2,10 +2,10 @@
 
 ![preview](/src/assets/logo.png)</h1>
 
-<p align="center">Track your funds</p>
+<p align="center">Find your thing</p>
 
-We live in a time where taking count of our earnings is crucial.<br/>
-Don't worry, we got you, Everlance is your daily expense tracker
+In the case Google is down, don't you worry, but, meet Quublyy, a new & minimalist
+search app 
 
 ## 🎯Links
 
