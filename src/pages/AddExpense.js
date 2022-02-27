@@ -4,9 +4,9 @@ import TopFold from '../components/TopFold';
 
 const AddExpense = () => {
   return (
-    <div className='w-1/2 mx-auto'>
+    <div className='w-10/12 mx-auto min-h-screen'>
       <TopFold />
-      <AddForm/>
+      <AddForm />
     </div>
   );
 };

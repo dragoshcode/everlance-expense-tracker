@@ -31,7 +31,7 @@ const TopFold = () => {
             />
           </div>
           <Link to='/add-expense'>
-            <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
+            <div className='flex items-center justify-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all lg:w-28'>
               <MdOutlineAddCircleOutline className='text-lg' />
               <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
                 Add
@@ -40,7 +40,7 @@ const TopFold = () => {
           </Link>
         </div>
       ) : (
-        <div className='flex justify-between items-center mt-8'>
+        <div className='flex justify-between items-center mt-8 lg:w-3/4 mx-auto 2xl:w-1/2'>
           <Link to='/'>
             <div className='flex items-center bg-white gap-2 py-2 px-3 rounded-lg text-md cursor-pointer hover:bg-gray-100 transition-all'>
               <IoIosArrowBack />

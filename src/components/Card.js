@@ -17,7 +17,7 @@ const Card = ({ item, notifySuccess }) => {
   switch (item.category) {
     case 'Education':
       return (
-        <div className='flex justify-between items-center bg-white py-3 px-5  rounded-lg mt-4'>
+        <div className='flex justify-between items-center bg-white py-3 px-5 rounded-lg mt-4'>
           <div className='flex flex-col'>
             <p className='text-purple-500 font-semibold'>{item.title}</p>
             <p className='font-semibold opacity-50'>{time}</p>

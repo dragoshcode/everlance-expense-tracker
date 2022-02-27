@@ -7,7 +7,7 @@ import AddExpense from './pages/AddExpense';
 
 const App = () => {
   return (
-    <div className='bg-gradient-to-bl from-sky-500 to-sky-900 min-h-screen'>
+    <div className='bg-gradient-to-bl from-sky-500 to-sky-900 min-h-screen overflow-y-hidden'>
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />

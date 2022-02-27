@@ -28,7 +28,7 @@ const ExpenseList = () => {
             alt='empty'
             className='bg-white p-6 rounded-lg w-full max-w-md mx-auto'
           />
-          <p className='bg-white w-max mx-auto p-2 rounded-lg mt-4 font-semibold'>
+          <p className='bg-white text-center sm:text-left sm:text-base sm:w-max mx-auto p-2 rounded-lg mt-4 font-semibold text-sm'>
             Oh, you don't spend money? 🤔
           </p>
         </div>

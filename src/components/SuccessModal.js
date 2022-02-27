@@ -12,7 +12,6 @@ const SuccessModal = ({ modalOpen, setModalOpen }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      width: '60%',
       border: '0',
       boxShadow: '3px 3px 31px 3px rgba(0,0,0,0.1)',
       borderRadius: '20px',
@@ -23,7 +22,7 @@ const SuccessModal = ({ modalOpen, setModalOpen }) => {
     <Modal isOpen={modalOpen} style={customStyles}>
       <div className='text-center'>
         <img src={logo} alt='logo' className='w-52 mx-auto' />
-        <p className='mt-3 bg-gradient-to-bl from-sky-600 to-sky-900 px-2 py-3 rounded-lg text-white w-1/2 mx-auto font-semibold'>
+        <p className='mt-3 bg-gradient-to-bl from-sky-600 to-sky-900 px-2 py-3 rounded-lg text-white w-3/4 mx-auto font-semibold text-center'>
           Your expense was successfully added ✔
         </p>
         <Link to='/'>

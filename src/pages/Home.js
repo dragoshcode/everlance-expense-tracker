@@ -4,7 +4,7 @@ import ExpenseList from '../components/ExpenseList';
 
 const Home = () => {
   return (
-    <div className='w-1/2 mx-auto'>
+    <div className='w-4/5 sm:w-1/2 mx-auto'>
       <TopFold />
       <ExpenseList />
     </div>

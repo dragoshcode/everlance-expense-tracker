@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { addExpense } from '../redux/actions/expenses';
 import Dropdown from './Dropdown';
 import SuccessModal from './SuccessModal';
+import '../index.css';
 
 const AddForm = () => {
   const [title, setTitle] = useState('');
@@ -44,18 +45,18 @@ const AddForm = () => {
       createdAt: new Date(),
     };
     dispatch(addExpense(data));
-    setModalOpen(true)
+    setModalOpen(true);
   };
 
   return (
-    <div className='bg-white rounded-lg p-6 mt-5'>
+    <div className='bg-white rounded-lg p-6 xl:p-12 mt-5 w-11/12 mx-auto lg:w-3/4 2xl:w-1/2'>
       <ToastContainer
         position='bottom-right'
         autoClose={1900}
         hideProgressBar={false}
         closeOnClick
       />
-      <SuccessModal modalOpen={modalOpen} setModalOpen={setModalOpen}/>
+      <SuccessModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <div className=''>
         <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold'>
           Title:
@@ -65,7 +66,7 @@ const AddForm = () => {
           placeholder='What have you spent on?'
           value={title}
           onChange={(e) => handleTitle(e)}
-          className='outline-none mt-3 text-white py-2 placeholder:text-white placeholder:text-opacity-60 px-4 rounded-lg bg-gradient-to-bl from-sky-500 to-sky-800 opacity-80'
+          className='outline-none mt-3 text-white py-2 placeholder:text-white placeholder:text-opacity-60 px-2 sm:px-4 rounded-lg bg-gradient-to-bl from-sky-500 to-sky-800 opacity-80 w-52 sm:w-3/4 lg:w-1/2'
         />
       </div>
       <div className='mt-6'>
@@ -77,7 +78,7 @@ const AddForm = () => {
           placeholder='How much have you spent?'
           value={amount}
           onChange={(e) => handleAmount(e)}
-          className='outline-none mt-3 text-white py-2 placeholder:text-white placeholder:text-opacity-60 px-4 rounded-lg bg-gradient-to-bl from-sky-500 to-sky-800 opacity-80'
+          className='outline-none mt-3 text-white py-2 placeholder:text-white placeholder:text-opacity-60 px-2 sm:px-4 rounded-lg bg-gradient-to-bl from-sky-500 to-sky-800 opacity-80 w-52 sm:w-3/4 lg:w-1/2'
         />
       </div>
       <div className='mt-6'>
@@ -86,7 +87,10 @@ const AddForm = () => {
       <div className='group w-max cursor-pointer ' onClick={handleSubmit}>
         <div className='flex items-center mt-8 bg-gray-200 w-max py-1 px-3 rounded-lg gap-2 group-hover:opacity-60 transition-opacity pointer-events-none'>
           <GrFormAdd className='group-hover:opacity-60 transition-opacity' />
-          <p className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold group-hover:bg-gradient-to-bl group-hover:from-sky-300 group-hover:to-sky-500 transition-colors'>
+          <p
+            className='bg-clip-text bg-gradient-to-bl from-sky-400 to-sky-600 text-transparent font-semibold group-hover:bg-gradient-to-bl group-hover:from-sky-300 group-hover:to-sky-500 transition-colors
+          '
+          >
             Add
           </p>
         </div>
