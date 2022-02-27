@@ -95,6 +95,8 @@ const Card = ({ item, notifySuccess }) => {
           </div>
         </div>
       );
+    default:
+      return <div></div>;
   }
 };
 

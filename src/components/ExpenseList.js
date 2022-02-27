@@ -19,7 +19,7 @@ const ExpenseList = () => {
       />
       {filterList.length ? (
         filterList.map((item) => (
-          <Card item={item} notifySuccess={notifySuccess} />
+          <Card key={item.title} item={item} notifySuccess={notifySuccess} />
         ))
       ) : (
         <div className='mt-10'>
